@@ -7,7 +7,7 @@ import twitter
 from datetime import datetime
 from termcolor import colored
 
-filename = open("files/targetUsers.txt", "r")
+filename = open(configuration.FILE_TARGET_USERS, "r")
 targetUsers = set(filename.read().split('\n'))
 followedUsers = helpers.getUsersFromFile(configuration.FILE_FOLLOWED_USERS)
 followQueue = targetUsers - followedUsers

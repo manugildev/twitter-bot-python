@@ -16,6 +16,14 @@ You need to have installed 2 Python modules, tweepy and termcolor. To install th
 	
 	pip install tweetpy 
 	pip install termcolor
+	
+You will also need to have the file structure has I have it, but you can always change the paths in *configuration.py*.
+
+	files/
+		stats.txt				# Stores the stats of your twitter account
+		targetUsers.txt			# Stores the users you are going to follow
+		followedUsers.txt		# Stores the users that have been followed
+		unfollowedUsers.txt		# Stores the users that have been unfollowed		
 
 ## Use
 1. Modify the file configuration.py filling the places where there are some **"=================="** with your keys and username
@@ -33,9 +41,9 @@ You need to have installed 2 Python modules, tweepy and termcolor. To install th
 	
 	Where the available parameteres are:
 
-	* -f <follows_per_day>
-	* -u <unfollows_per_days>
-	* -d <days> - days to wait to unfollow a user
+	* -f \<follows_per_day\> - Number of follows per day
+	* -u \<unfollows_per_days\> - Number of unfollows per day
+	* -d \<days\> - days to wait to unfollow a user
 
 
 ## Credits
