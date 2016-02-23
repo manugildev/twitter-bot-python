@@ -1,5 +1,5 @@
 # Twitter Bot
-
+![image](http://i.imgur.com/mCjs953.png =600x)
 ## Overview
 This bot was originally made to run on a **RaspberryPi**, without any user interaction, you just start it and it should automatically follow and unfollow X number of users per day.
 
