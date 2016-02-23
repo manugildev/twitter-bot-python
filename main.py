@@ -72,7 +72,6 @@ def main(argv):
 	except getopt.GetoptError:
 		print('main.py -f <follows_per_day> -u <unfollows_per_days> -d <days>')
 		sys.exit(2)
-
 	for opt, arg in opts:
 		if opt == '-h':
 			print('main.py -f <follows_per_day> -u <unfollows_per_days> -d <days>')
