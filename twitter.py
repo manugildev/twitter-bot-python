@@ -16,6 +16,7 @@ api = tweepy.API(auth)
 followCount = 0
 unfollowCount = 0
 
+
 def updateStatus(msg):
 	api.update_status(status=msg)
 
@@ -26,7 +27,7 @@ def followUser(user):
 		appendToFile(configuration.FILE_FOLLOWED_USERS, getDate() + ", " + user)
 		global followCount
 		followCount += 1
-		print(colored(getTime() + " --- " + str(followCount) + " --- User followed: " + user, 'green'))
+		print(getTime() + " --- " + str(followCount) + " --- " + colored("User followed: " + user, 'green'))
 	except Exception as e:
 		print(colored(e, 'red'))
 
@@ -37,7 +38,7 @@ def unfollowUser(user):
 		appendToFile(configuration.FILE_UNFOLLOWED_USERS, getDate() + ", " + user)
 		global unfollowCount
 		unfollowCount += 1
-		print(colored(getTime() + " --- " + str(unfollowCount) + " --- User unfollowed: " + user, 'red'))
+		print(getTime() + " --- " + str(unfollowCount) + " --- " + colored("User unfollowed: " + user, 'red'))
 	except Exception as e:
 		print(colored(e, 'red'))
 
