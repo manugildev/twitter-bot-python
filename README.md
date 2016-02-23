@@ -14,7 +14,7 @@ Time is in Milliseconds format, if you want to now the date you can use <http://
 
 You need to have installed 2 Python modules, tweepy and termcolor. To install those, use the following commands (for python 3+ use *pip3* instead of *pip*):
 	
-	pip install tweetpy 
+	pip install tweepy 
 	pip install termcolor
 	
 You will also need to have the file structure has I have it, but you can always change the paths in *configuration.py*.
