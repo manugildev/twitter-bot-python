@@ -1,7 +1,7 @@
 import tweepy
 import configuration
 from termcolor import colored
-from helpers import getDate, getCurrentMillis, appendToFile, getTime
+from helpers import getDate, getCurrentMillis, appendToFile, getTime, sendMessage
 
 # Initializing tweepy variables
 API_KEY = configuration.keys['API_KEY']
@@ -60,3 +60,4 @@ def getStats(user):
 	print(colored("===========================", 'cyan'))
 	appendToFile(configuration.FILE_STATS,
 	             "{}:{}:{}:{}:{}".format(getCurrentMillis(), tweets, following, followers, favourites))
+	sendMessage(tweets, following, followers)
