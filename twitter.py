@@ -3,6 +3,7 @@ import configuration
 from termcolor import colored
 from helpers import getDate, getCurrentMillis, appendToFile, getTime
 
+# Initializing tweepy variables
 API_KEY = configuration.keys['API_KEY']
 API_SECRET = configuration.keys['API_SECRET']
 ACCESS_TOKEN = configuration.keys['ACCESS_TOKEN']
@@ -11,6 +12,9 @@ auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
+# Counters, just to keep track of numbers
+followCount = 0
+unfollowCount = 0
 
 def updateStatus(msg):
 	api.update_status(status=msg)
@@ -20,7 +24,9 @@ def followUser(user):
 	try:
 		api.create_friendship(screen_name=user)
 		appendToFile(configuration.FILE_FOLLOWED_USERS, getDate() + ", " + user)
-		print(colored(getTime() + " User followed: " + user, 'green'))
+		global followCount
+		followCount += 1
+		print(colored(getTime() + " --- " + str(followCount) + " --- User followed: " + user, 'green'))
 	except Exception as e:
 		print(colored(e, 'red'))
 
@@ -29,7 +35,9 @@ def unfollowUser(user):
 	try:
 		api.destroy_friendship(screen_name=user)
 		appendToFile(configuration.FILE_UNFOLLOWED_USERS, getDate() + ", " + user)
-		print(colored(getTime() + " User unfollowed: " + user, 'red'))
+		global unfollowCount
+		unfollowCount += 1
+		print(colored(getTime() + " --- " + str(unfollowCount) + " --- User unfollowed: " + user, 'red'))
 	except Exception as e:
 		print(colored(e, 'red'))
 

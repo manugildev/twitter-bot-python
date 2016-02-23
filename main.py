@@ -12,7 +12,6 @@ targetUsers = set(filename.read().split('\n'))
 followedUsers = helpers.getUsersFromFile(configuration.FILE_FOLLOWED_USERS)
 followQueue = targetUsers - followedUsers
 
-
 def followBot():
 	try:
 		print(colored("Starting Follow Bot: " + str(len(followQueue)), 'cyan', attrs=['bold']))
