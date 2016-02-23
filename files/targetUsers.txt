@@ -1,0 +1,11 @@
+# This needs to be a blank file (Remove this comment) and put
+# a list of users, with one user in each line
+# Example:
+justinbieber
+selenagomez
+cristianoronaldo
+leomessi
+kimkardashian
+ladygaga
+galaxypicks
+... etc
